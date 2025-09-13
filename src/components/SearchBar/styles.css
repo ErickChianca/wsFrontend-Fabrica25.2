@@ -1,0 +1,59 @@
+#searchPokemonsSection {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 18px;
+  gap: 10px;
+}
+
+#searchPokemonsTitle {
+  font-size: 28px;
+  color: var(--primary-text-color);
+}
+
+.searchBar {
+  background-color: var(--secondary-background-color);
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px; 
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+  width: 40px;
+  overflow: hidden;
+}
+
+.searchBar.expanded {
+  width: 100%;
+}
+
+.searchInput {
+  width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  font-size: 16px;
+  transition: 0.5s ease;
+  color: var(--primary-background-color);
+}
+
+.searchInput::placeholder {
+  color: var(--primary-background-color);
+  opacity: 0.6;
+}
+
+.searchBar.expanded .searchInput{
+  width: 100%;
+  padding: 0 10px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 40px;
+  color: var(--primary-background-color);
+  transition: 0.4s;
+  cursor: pointer;
+} 

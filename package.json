@@ -1,0 +1,35 @@
+{
+  "name": "wsfrontend-fabrica25.2",
+  "version": "1.0.0",
+  "description": "Desafio do Workshop de Front-end da Fábrica de Softwares da Unipê.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErickChianca/wsFrontend-Fabrica25.2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ErickChianca/wsFrontend-Fabrica25.2/issues"
+  },
+  "homepage": "https://github.com/ErickChianca/wsFrontend-Fabrica25.2#readme",
+  "dependencies": {
+    "axios": "^1.12.1",
+    "next": "^15.5.3",
+    "react": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "5.9.2"
+  }
+}
