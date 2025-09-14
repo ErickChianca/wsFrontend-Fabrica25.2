@@ -16,7 +16,7 @@ type Props = {
 }
 
 type PokemonsListProps = Props & {
-  visibility: boolean
+  visibility?: boolean
 }
 
 export function PokemonsList({ pokemons , visibility}: PokemonsListProps, ) {
