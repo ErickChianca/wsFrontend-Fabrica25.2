@@ -1,7 +1,7 @@
 "use client"
 
-import React from 'react'
-import { useState } from 'react'
+import React, { use } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import SearchIcon from '@/assets/search-icon.svg'
 import GridIcon from '@/assets/grid-fill.svg' 
@@ -13,8 +13,13 @@ type SearchBarProps = {
   setVisibility: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export function SearchBar( { visibility, setVisibility }: SearchBarProps ) {
+export function SearchBar( { visibility, setVisibility, onSearchChange }: SearchBarProps & { onSearchChange: (value: string) => void }) {
   const [expanded, setExpanded] = useState(false)
+  // const [searchInput, setSearchInput] = useState('')
+
+  function search(e: React.ChangeEvent<HTMLInputElement>) {
+    onSearchChange(e.target.value)
+  }
 
   function toggleExpanded(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault()
@@ -39,7 +44,7 @@ export function SearchBar( { visibility, setVisibility }: SearchBarProps ) {
         <a className='changeVisibilityBtn' onClick={toggleToList}><Image src={ListIcon} alt="Visão em lista" width={24} height={24}/></a>
       </div>
       <div className={`searchBar ${expanded ? 'expanded' : ''}`}>
-        <input type="text" placeholder="e.g. Charmander" className="searchInput"/>
+        <input type="text" placeholder="e.g. Charmander" className="searchInput" onChange={search}/>
         <a href="##" className="searchIcon" onClick={toggleExpanded}>
           <Image src={SearchIcon} alt="Botão de Pesquisa" className="icon"/>
         </a>
