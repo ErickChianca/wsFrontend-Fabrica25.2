@@ -1,6 +1,6 @@
 export async function getPokemons() {
   try {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10277&offset=0")
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=300&offset=0")
 
       if (!response.ok) throw new Error("Nenhum pokemon encontrado.");
       
