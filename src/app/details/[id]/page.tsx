@@ -59,8 +59,8 @@ export default async function DetailsPage({ params }: DetailsPageProps) {
 
           <div className='infoCard'>
             <h3>Tamanho</h3>
-            <p>Altura: {pokemon.height}</p>
-            <p>Peso: {pokemon.weight}</p>
+            <p>Altura: {(pokemon.height / 10)}m</p>
+            <p>Peso: {pokemon.weight}kg</p>
           </div>
         </div>
         

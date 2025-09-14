@@ -9,7 +9,6 @@ import { searchPokemon } from '@/services/searchPokemon'
 import { useEffect, useState } from 'react'
 import './globals.css'
 
-
 export default function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [layoutVisibility, setLayoutVisibility] = useState(false);
