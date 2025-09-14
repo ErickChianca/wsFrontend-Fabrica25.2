@@ -9,14 +9,12 @@ import Masterball from '../../../assets/masterball.png'
 import AddToFavoritesButton from '@/components/AddToFavoritesButton'
 
 type DetailsPageProps = { 
-  params: { 
-    id: number 
-  }
+  params: Promise<{ id: string }>
 }
 
-export default async function DetailsPage({ params }: DetailsPageProps) { 
-
-  const pokemon = await getPokemon(params.id)
+export default async function DetailsPage(props: { params: Promise<{ id: string }> }) { 
+  const { id } = await props.params
+  const pokemon = await getPokemon(Number(id))
 
   if(!pokemon) return <h1>Pokemon não encontrado</h1>
 
