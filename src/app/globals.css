@@ -9,5 +9,92 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
+a {
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27px;
+  background-color: var(--secondary-background-color);
+  color: var(--primary-background-color);
+}
+
+#headerLogoDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+main {
+  background-color: var(--primary-background-color);
+  min-height: 100vh;
+  padding: 18px;
+}
+
+#logo {
+  font-size: 26px;
+}
+
+.bookmark {
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  fill: var(--primary-background-color);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-background-color);
+  color: var(--primary-background-color);
+  padding: 18px;
+  align-items: center;
+}
+
+.footerLogoText {
+  font-size: 20px;
+}
+
+.footerNav {
+  display: none;
+}
+
+.mediaIcon {
+  margin-right: 5px;
+}
+
+@media (min-width: 425px) {
+  .footerNav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  header, footer {
+    padding: 30px;
+  }
+
+  main {
+    padding: 15px 30px;
+  }
+}
+
+@media (min-width: 1050px) {
+  header, footer {
+    padding: 40px 40px;
+  }
+
+  main {
+    padding: 20px 40px;
+  }
+}

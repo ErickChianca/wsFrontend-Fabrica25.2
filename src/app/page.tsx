@@ -6,11 +6,12 @@ import { SearchBar } from '@/components/SearchBar'
 import { PokemonsList } from '@/components/PokemonsList'
 import { getPokemons } from '@/services/getAllPokemons'
 import { useEffect, useState } from 'react'
-
 import './globals.css'
+
 
 export default function Home() {
   const [pokemons, setPokemons] = useState([]);
+  const [layoutVisibility, setLayoutVisibility] = useState(false);
 
   useEffect(() => {
     getPokemons().then(setPokemons);
@@ -20,10 +21,10 @@ export default function Home() {
     <>
       <HeaderBanner />
       <main>
-        <SearchBar />
-        <PokemonsList pokemons={pokemons} />
-        <FooterMenu />
+        <SearchBar visibility={layoutVisibility} setVisibility={setLayoutVisibility} />
+        <PokemonsList pokemons={pokemons} visibility={layoutVisibility}/>
       </main>
+      <FooterMenu />
     </>
   )
 }

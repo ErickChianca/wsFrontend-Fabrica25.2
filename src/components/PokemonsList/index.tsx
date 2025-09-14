@@ -15,21 +15,27 @@ type Props = {
   pokemons: Pokemon[]
 }
 
-export function PokemonsList({ pokemons }: Props) {
+type PokemonsListProps = Props & {
+  visibility: boolean
+}
+
+export function PokemonsList({ pokemons , visibility}: PokemonsListProps, ) {
   return (
-    <section id='pokemonsList'>
+    <section id={visibility ? 'pokemonsGrid' : 'pokemonsList'}>
       {pokemons.map((pokemon) => (
         <div key={pokemon.id} className='pokemonsCard'>
-          <div className='pokemonTopCardDiv'>
-            <h2 className='pokemonName'>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-            <div className='pokemonIdDiv'>
-              <Image src={Pokeball} alt="Pokebola" width={20} /> {pokemon.id}
-            </div>
-          </div>
           <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} className="pokemonImage" alt={pokemon.name} loading='lazy'/>
-          <a href="" className='seePokemonDetailsAnchor'>
-            <button className='seePokemonDetailsBtn'>Ver detalhes</button>
-          </a>
+          <div className='pokemonsCardContent'>
+            <div className='pokemonTopCardDiv'>
+              <h2 className='pokemonName'>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+              <div className='pokemonIdDiv'>
+                <Image src={Pokeball} alt="Pokebola" width={20} className='pokeballIcon'/> {pokemon.id}
+              </div>
+            </div>
+            <a href={`/details/${pokemon.id}`} className='seePokemonDetailsAnchor'>
+              <button className='seePokemonDetailsBtn'>Ver detalhes</button>
+            </a>
+          </div>
         </div>
       ))}
     </section>

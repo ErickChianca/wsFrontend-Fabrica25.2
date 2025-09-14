@@ -1,0 +1,81 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemonNameAndIdDiv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pokemonAditionalInformations {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 0 18px 0;
+  width: 100%;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--secondary-background-color);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--primary-text-color);
+  padding: 20px;
+}
+
+h3 {
+  color: var(--secondary-background-color);
+}
+
+.addToFavoritesDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px 18px 20px;
+}
+
+#addToFavoritesText {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+#addToFavorites {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  gap: 5px;
+  background-color: var(--secondary-background-color);
+  color: var(--primary-background-color);
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  transition: .4s ease;
+}
+
+#addToFavorites:hover {
+  transform: translateY(-5px);
+  filter: brightness(0.8);
+}
+
+@media (min-width: 768px) {
+  .pokemonAditionalInformations {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pokemonAditionalInformations {
+    width: 70%;
+  }
+}

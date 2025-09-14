@@ -5,6 +5,21 @@
   gap: 10px;
 }
 
+.titleAndLayoutBtnsDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.changeVisibilityBtn {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
 #searchPokemonsTitle {
   font-size: 28px;
   color: var(--primary-text-color);
@@ -57,3 +72,9 @@
   transition: 0.4s;
   cursor: pointer;
 } 
+
+@media (min-width: 425px)  {
+  .changeVisibilityBtn {
+    display: flex;
+  }
+}

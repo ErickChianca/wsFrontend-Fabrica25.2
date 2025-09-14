@@ -1,3 +1,22 @@
+.titleAndLayoutBtnsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  padding: 0 0px 18px 0px;
+}
+
+#favoritesTitle {
+  font-size: 24px;
+  color: var(--primary-text-color);
+}
+
+.changeVisibilityDiv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  display: none
+}
+
 #pokemonsList {
   display: flex;
   flex-direction: column;
@@ -29,9 +48,7 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
-  padding: 10px;
 }
-
 
 .pokemonName {
   color: var(--primary-text-color);
@@ -50,8 +67,26 @@
   height: auto;
 }
 
+.pokemonsCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;  
+}
+
+.pokemonsButtonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
 .seePokemonDetailsAnchor {
-  width: 80%;
+  width: 100%;
 }
 
 .seePokemonDetailsBtn {
@@ -70,13 +105,35 @@
   transform: translateY(-5px);
 }
 
-@media (min-width: 460px) {
+.releasePokemonBtn {
+  background-color: var(--highlight-color);
+  color: var(--primary-text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: .4s ease;
+  width: 100%;
+}
+
+.releasePokemonBtn:hover {
+  filter: brightness(0.8);
+  transform: translateY(-5px);
+}
+
+@media (min-width: 320px) {
   #pokemonsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 425px) {
+  .changeVisibilityDiv {
+    display: flex;
+  }
+}
+
+@media (min-width: 600px) {
   #pokemonsList > .pokemonsCard {
     flex-direction: row;
     align-items: center;
@@ -97,13 +154,26 @@
     width: 100%;
   }
 
-  #pokemonsList > .pokemonsCard > .pokemonsCardContent > .seePokemonDetailsAnchor{
+  #pokemonsList > .pokemonsCard > .pokemonsCardContent  > .pokemonsButtonsDiv {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #pokemonsList > .pokemonsCard > .pokemonsCardContent  > .pokemonsButtonsDiv > .seePokemonDetailsAnchor{
+    display: flex;
+    justify-content: flex-end
+  } 
+
+  #pokemonsList > .pokemonsCard > .pokemonsCardContent > .pokemonsButtonsDiv > .seePokemonDetailsAnchor > .seePokemonDetailsBtn {
+    padding: 15px;
+    font-size: 15px;
     width: 150px;
   }
 
-  #pokemonsList > .pokemonsCard > .pokemonsCardContent > .seePokemonDetailsAnchor > .seePokemonDetailsBtn {
+  #pokemonsList > .pokemonsCard > .pokemonsCardContent > .pokemonsButtonsDiv > .releasePokemonBtn {
     padding: 15px;
     font-size: 15px;
+    width: 150px;
   }
 
   #pokemonsList > .pokemonsCard > .pokemonsCardContent > .pokemonTopCardDiv > .pokemonName {
